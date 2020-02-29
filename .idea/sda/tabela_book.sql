@@ -24,6 +24,8 @@ CREATE TABLE IF NOT EXISTS author (
             lastname VARCHAR(128)
 );
 
+DROP TABLE book;
+
 CREATE TABLE IF NOT EXISTS book (
 			title VARCHAR(256),
             author VARCHAR(128),
@@ -34,3 +36,40 @@ CREATE TABLE IF NOT EXISTS book (
             publisher VARCHAR(128),
             price FLOAT
 );
+
+SHOW DATABASES;
+SHOW TABLES;
+DESC book;
+
+ALTER TABLE book ADD COLUMN new_column VARCHAR(256);
+ALTER TABLE book DROP COLUMN new_column;
+USE library;
+INSERT INTO book (title, author, published, isbn, category, page_count, publisher, price)
+VALUES ('Spring w akcji Wydanie IV', 'Craig Walls', '2015-08-13', '978-83-283-0849-7', 'Programowanie java', 624, 'Helion', 89.00);
+
+INSERT INTO book(title, author, published, isbn, category, page_count, publisher, price)
+VALUES ('MySQL. Vademecum profesjonalisty', 'Paul DuBois', '2014-03-28', '978-83-246-8146-4', 'Bazy danych', 1216, 'Helion', 149.00);
+
+SELECT * FROM book;
+
+ALTER TABLE book MODIFY COLUMN title VARCHAR(256) NOT NULL;
+ALTER TABLE book MODIFY COLUMN author VARCHAR(128) NOT NULL;
+ALTER TABLE book MODIFY COLUMN isbn VARCHAR(128) NOT NULL;
+ALTER TABLE book MODIFY COLUMN isbn VARCHAR(128) NOT NULL UNIQUE;
+ALTER TABLE book MODIFY COLUMN publisher VARCHAR(128) DEFAULT 'nieznana';
+
+ALTER TABLE book ADD COLUMN in_stock INT DEFAULT 0;
+
+DESC book;
+
+
+
+
+ 
+
+
+
+
+
+
+
