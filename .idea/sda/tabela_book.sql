@@ -25,12 +25,12 @@ CREATE TABLE IF NOT EXISTS author (
 );
 
 CREATE TABLE IF NOT EXISTS book (
-			title VARCHAR(128),
+			title VARCHAR(256),
             author VARCHAR(128),
-            published INT,
-            isbn INT,
+            published DATE,
+            isbn VARCHAR(128),
             category VARCHAR(128),
-            page_count INT,
+            page_count INT(128),
             publisher VARCHAR(128),
             price FLOAT
 );
