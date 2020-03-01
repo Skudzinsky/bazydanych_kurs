@@ -1,0 +1,21 @@
+#cw4 v1
+ALTER TABLE book MODIFY COLUMN title VARCHAR(256) NOT NULL;
+ALTER TABLE book MODIFY COLUMN author VARCHAR(128) NOT NULL;
+ALTER TABLE book MODIFY COLUMN isbn VARCHAR(32) UNIQUE NOT NULL; 
+ALTER TABLE book MODIFY COLUMN publisher VARCHAR(32) DEFAULT 'nieznana';
+ALTER TABLE book ADD COLUMN in_stock INT DEFAULT 0;
+DESC book;
+
+#cw4 v2
+CREATE TABLE book (
+	title VARCHAR(256) NOT NULL,
+	author VARCHAR(128) NOT NULL,
+	published DATE,
+	isbn VARCHAR(32) NOT NULL UNIQUE,
+	category VARCHAR(128),
+	page_count INT,
+	publisher VARCHAR(128) DEFAULT 'nieznana',
+	price FLOAT,
+    in_stock INT DEFAULT 0
+);
+DESC book;
