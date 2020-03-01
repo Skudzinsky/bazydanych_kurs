@@ -22,7 +22,7 @@ SELECT * FROM book;
 #2. Wyświetl książki z kategorii Klasyka polska.
 SELECT * FROM book WHERE category = 'Klasyka polska';
 #3. Policz ile jest książek w przedziale cenowym 10 - 30 zł.
-SELECT * FROM book WHERE price BETWEEN 10 AND 30;
+SELECT count(*) FROM book WHERE price BETWEEN 10 AND 30;
 #4. Wyświetl największą liczbę stron oraz najmniejszą w książkach.
 SELECT MIN(page_count) FROM book;
 SELECT MAX(page_count) FROM book;
@@ -51,14 +51,16 @@ FROM book
 WHERE category != 'Lektury' AND price > 20
 ORDER BY title DESC;
 #11. Wyświetl wszystkie dane z tabeli book tłumacząc nazwy kolumn na język polski.
-SELECT title AS tytuł FROM book;
-SELECT author AS autor FROM book;
-SELECT published AS wydana FROM book;
-SELECT isbn AS isbn FROM book;
-SELECT category AS kategoria FROM book;
-SELECT page_count AS liczba_stron FROM book;
-SELECT publisher AS wydawca FROM book;
-SELECT price AS cena FROM book;
+SELECT
+title AS tytuł,
+author AS autor,
+published AS wydana,
+isbn,
+category AS kategoria,
+page_count AS liczba_stron,
+publisher AS wydawca,
+price AS cena
+FROM book;
 
 
 
